@@ -61,7 +61,7 @@ function initialize(){
 	pic_db[13] = {"file":"toilet02.jpg","type":"廁所"};
 	pic_db[14] = {"file":"toilet03.jpg","type":"廁所"};
 	pic_db[15] = {"file":"brita04.png","type":"讓水變乾淨"};
-	pic_db[16] = {"file":"brita02.jpg","type":"讓水變乾淨"};
+	pic_db[16] = {"file":"brita03.jpg","type":"讓水變乾淨"};
 	pic_db[17] = {"file":"bath04.png","type":"洗澡"};
 	pic_db[18] = {"file":"wash04.jpg","type":"洗衣"};
 	pic_db[19] = {"file":"toilet04.jpg","type":"廁所"};
