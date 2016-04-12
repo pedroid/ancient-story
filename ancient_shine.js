@@ -45,28 +45,28 @@ picture = []
 function initialize(){
 	//database
 	pic_db = []
-	pic_db[0] = {"file":"消防車.png", "type":"滅火"};
-	pic_db[1] = {"file":"水桶滅火.jpg", "type":"滅火"};
-	pic_db[2] = {"file":"消防栓.png", "type":"滅火"};
-	pic_db[3] = {"file":"滅火器.jpg", "type":"滅火"};
-	pic_db[4] = {"file":"野溪溫泉.png","type":"洗澡"}
-	pic_db[5] = {"file":"現代洗澡.png","type":"洗澡"};
-	pic_db[6] = {"file":"洗衣機.jpg","type":"洗衣"};
-	pic_db[7] = {"file":"過濾設備.png","type":"讓水變乾淨"};
-	pic_db[8] = {"file":"茅草.jpg","type":"廁所"};
-	pic_db[9] = {"file":"手洗衣服.png","type":"洗衣"};
-	pic_db[10] = {"file":"手搖式洗衣機.png","type":"洗衣"};
-	pic_db[11] = {"file":"木桶泡澡.png","type":"洗澡"};
-	pic_db[12] = {"file":"brita.jpg","type":"讓水變乾淨"};
-	pic_db[13] = {"file":"茅廁.png","type":"廁所"};
-	pic_db[14] = {"file":"茅廁.jpg","type":"廁所"};
-	pic_db[15] = {"file":"煮水.jpg","type":"讓水變乾淨"};
-	pic_db[16] = {"file":"逆滲透.jpg","type":"讓水變乾淨"};
-	pic_db[17] = {"file":"木桶泡澡.jpg","type":"洗澡"};
-	pic_db[18] = {"file":"河邊洗衣.jpg","type":"洗衣"};
-	pic_db[19] = {"file":"馬桶.jpg","type":"廁所"};
-	
-	
+	pic_db[0] = {"file":"firefighter01.jpg", "type":"滅火"};
+	pic_db[1] = {"file":"firefighter02.jpg", "type":"滅火"};
+	pic_db[2] = {"file":"firefighter03.png", "type":"滅火"};
+	pic_db[3] = {"file":"firefighter04.png", "type":"滅火"};
+	pic_db[4] = {"file":"bath01.jpg","type":"洗澡"}
+	pic_db[5] = {"file":"bath02.png","type":"洗澡"};
+	pic_db[6] = {"file":"wash01.jpg","type":"洗衣"};
+	pic_db[7] = {"file":"brita01.jpg","type":"讓水變乾淨"};
+	pic_db[8] = {"file":"toilet01.jpg","type":"廁所"};
+	pic_db[9] = {"file":"wash02.jpg","type":"洗衣"};
+	pic_db[10] = {"file":"wash03.png","type":"洗衣"};
+	pic_db[11] = {"file":"bath03.png","type":"洗澡"};
+	pic_db[12] = {"file":"brita02.jpg","type":"讓水變乾淨"};
+	pic_db[13] = {"file":"toilet02.jpg","type":"廁所"};
+	pic_db[14] = {"file":"toilet03.jpg","type":"廁所"};
+	pic_db[15] = {"file":"brita04.png","type":"讓水變乾淨"};
+	pic_db[16] = {"file":"brita02.jpg","type":"讓水變乾淨"};
+	pic_db[17] = {"file":"bath04.png","type":"洗澡"};
+	pic_db[18] = {"file":"wash04.jpg","type":"洗衣"};
+	pic_db[19] = {"file":"toilet04.jpg","type":"廁所"};
+
+
 
 	table_to_picture = [];
 	for(var i=0;i<20;i=i+1){
@@ -92,7 +92,7 @@ repeat(function(){
 	}
 	for(var i=0;i<20;i=i+1){
 		var table_id = '#table_'+i+' img';
-		if(picture[i].show){			
+		if(picture[i].show){
 			$(table_id).attr('src','db/'+pic_db[i].file);
 		}else{
 			$(table_id).attr('src','db/blank.png');
@@ -101,7 +101,7 @@ repeat(function(){
 	for(var i=0;i<20;i=i+1){
 		id_table = '#table_'+i+' img';
 		pic_path = 'db/'+ pic_db[i].file;
-		if(picture[i].is_choosen){			
+		if(picture[i].is_choosen){
 			picture[i].show = true;
 		}
 	}
@@ -113,7 +113,7 @@ repeat(function(){
 })
 function inspect_complete(){
 	var all_match = false;
-	for (var i =0;i<20;i = i+1){		
+	for (var i =0;i<20;i = i+1){
 		if(picture[i].match){all_match = true;}
 		else{
 			all_match = false;
@@ -132,8 +132,8 @@ var img_selected = tmp = Array.apply(null, Array(20)).map(function(){return fals
 var num_choose = 0;
 var picture_set_id=[];
 function img_show_switch(id_picture){
-	table_src = '#table_'+id_picture;	
-	console.log(id_picture);	
+	table_src = '#table_'+id_picture;
+	console.log(id_picture);
 	picture[id_picture].is_choosen = true;
 	setTimeout(//wait 2000ms to proc...
 		function(){
@@ -144,7 +144,7 @@ function img_show_switch(id_picture){
 					console.log('file:'+pic_db[id_picture].file + ', type:' + pic_db[id_picture].type, ' is selected.');
 					num_choose=1;
 					picture_set_id[0] = id_picture;
-					
+
 				}else if(num_choose == 1){
 					console.log('picture['+id_picture+'] selected');
 					console.log('file:'+pic_db[id_picture].file + ', type:' + pic_db[id_picture].type, ' is selected.');
@@ -161,7 +161,7 @@ function img_show_switch(id_picture){
 	,2000);
 }
 function to_show(id_picture){
-	
+
 }
 
 function img_is_match(picture_set_id){
@@ -177,10 +177,10 @@ function img_is_match(picture_set_id){
 		picture[picture_set_id[1]].is_choosen = false;
 		picture[picture_set_id[0]].show = false;
 		picture[picture_set_id[1]].show = false;
-		
-		
+
+
 		//
-		//picture[picture_set_id[1]].reset();	
+		//picture[picture_set_id[1]].reset();
 	}
 
 
@@ -192,7 +192,7 @@ function img_is_match(picture_set_id){
 //model
 function Picture () {
 	this.file;
-	this.type;	
+	this.type;
 	this.match = false;
 	this.is_choosen = false;
 	this.show = false;
